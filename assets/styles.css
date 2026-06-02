@@ -1,11 +1,14 @@
 :root {
-  --ink: #17211f;
-  --muted: #61706b;
-  --soft: #f6f3ee;
+  --ink: #19211f;
+  --muted: #5d6a66;
+  --soft: #f8f5ef;
   --card: #ffffff;
-  --line: #e8e1d7;
-  --accent: #1c5c55;
-  --shadow: 0 24px 70px rgba(23, 33, 31, 0.09);
+  --line: #e5ddd2;
+  --accent: #0f6b61;
+  --accent-2: #c55f4b;
+  --sky: #dceaf0;
+  --sun: #f2c766;
+  --shadow: 0 18px 42px rgba(25, 33, 31, 0.08);
 }
 
 * {
@@ -27,10 +30,11 @@ a {
 .site-header {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 24px 0;
+  padding: 22px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 22px;
 }
 
 .brand {
@@ -70,16 +74,26 @@ nav a:hover {
   color: var(--ink);
 }
 
+.nav-cta {
+  color: var(--ink);
+}
+
 main {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
 }
 
 .hero {
-  min-height: 68vh;
+  min-height: 72vh;
   display: grid;
-  align-content: center;
-  padding: 64px 0 80px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+  padding: 56px 0 76px;
+}
+
+.hero-content {
+  max-width: 760px;
 }
 
 .eyebrow,
@@ -100,19 +114,19 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.2rem, 9vw, 7rem);
+  font-size: clamp(3rem, 7vw, 5.9rem);
   max-width: 900px;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.045em;
 }
 
 h2 {
   font-size: clamp(2rem, 4vw, 3.4rem);
-  letter-spacing: -0.045em;
+  letter-spacing: -0.035em;
 }
 
 h3 {
   font-size: 1.35rem;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.015em;
 }
 
 .hero-copy,
@@ -147,15 +161,94 @@ h3 {
   color: white;
 }
 
+.button.primary:hover {
+  background: var(--accent);
+}
+
 .button.secondary {
   background: white;
   color: var(--ink);
   border: 1px solid var(--line);
 }
 
+.hero-media {
+  min-height: 470px;
+  position: relative;
+}
+
+.image-placeholder,
+.card-image,
+.story-image {
+  color: rgba(25, 33, 31, 0.78);
+  background:
+    linear-gradient(135deg, rgba(15, 107, 97, 0.18), rgba(242, 199, 102, 0.2)),
+    var(--sky);
+  border: 1px solid rgba(25, 33, 31, 0.09);
+  overflow: hidden;
+}
+
+.image-placeholder {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.image-placeholder::before,
+.card-image::before,
+.story-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 24% 26%, rgba(255, 255, 255, 0.62) 0 9%, transparent 10%),
+    radial-gradient(circle at 70% 34%, rgba(255, 255, 255, 0.42) 0 7%, transparent 8%),
+    linear-gradient(160deg, transparent 0 58%, rgba(197, 95, 75, 0.26) 59% 100%);
+  pointer-events: none;
+}
+
+.image-placeholder.large {
+  inset: 0 56px 72px 0;
+  border-radius: 8px;
+}
+
+.image-placeholder.small {
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  min-height: 190px;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(197, 95, 75, 0.18), rgba(15, 107, 97, 0.18)),
+    #efe7dd;
+}
+
+.image-placeholder span,
+.story-image span {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.68rem;
+  font-weight: 850;
+}
+
+.image-placeholder strong,
+.story-image strong {
+  position: relative;
+  z-index: 1;
+  max-width: 260px;
+  font-size: 1.18rem;
+  line-height: 1.15;
+}
+
 .intro,
 .cards-section,
 .why,
+.story-band,
 .cta-panel,
 .form-wrap,
 .details-grid,
@@ -164,6 +257,10 @@ h3 {
 }
 
 .intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 36px;
+  align-items: end;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -182,6 +279,7 @@ h3 {
 
 .cards {
   grid-template-columns: repeat(3, 1fr);
+  align-items: stretch;
 }
 
 .why-grid,
@@ -201,13 +299,32 @@ h3 {
 .cta-panel {
   background: var(--card);
   border: 1px solid var(--line);
-  border-radius: 28px;
+  border-radius: 8px;
   padding: 28px;
   box-shadow: var(--shadow);
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
 .card.featured {
   transform: translateY(-8px);
+}
+
+.card-image {
+  position: relative;
+  min-height: 180px;
+  border-radius: 6px;
+  margin: -12px -12px 22px;
+  padding: 18px;
+  display: flex;
+  align-items: flex-end;
+  font-size: 0.8rem;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
 .card p,
@@ -220,6 +337,7 @@ h3 {
 }
 
 .card a {
+  margin-top: auto;
   font-weight: 800;
   color: var(--accent);
   text-decoration: none;
@@ -230,8 +348,39 @@ h3 {
   padding-top: 18px;
 }
 
+.story-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+  gap: 34px;
+  align-items: stretch;
+  border-top: 1px solid var(--line);
+}
+
+.story-copy {
+  align-self: center;
+}
+
+.story-copy p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.story-image {
+  position: relative;
+  min-height: 360px;
+  border-radius: 8px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
 .cta-panel {
   margin: 32px 0 72px;
+  background:
+    linear-gradient(135deg, rgba(15, 107, 97, 0.08), rgba(242, 199, 102, 0.12)),
+    var(--card);
 }
 
 .page-hero {
@@ -286,17 +435,25 @@ footer p {
   nav {
     flex-wrap: wrap;
     gap: 14px;
+    width: 100%;
   }
 
   .hero {
+    grid-template-columns: 1fr;
     min-height: auto;
-    padding: 56px 0;
+    padding: 42px 0 56px;
+  }
+
+  .hero-media {
+    min-height: 330px;
   }
 
   .cards,
   .why-grid,
   .details-grid,
-  .form-wrap {
+  .form-wrap,
+  .intro,
+  .story-band {
     grid-template-columns: 1fr;
   }
 
@@ -305,6 +462,39 @@ footer p {
   }
 
   h1 {
-    font-size: clamp(3rem, 16vw, 5rem);
+    font-size: clamp(2.8rem, 14vw, 4.6rem);
+  }
+
+  .hero-actions,
+  .button {
+    width: 100%;
+  }
+
+  .image-placeholder.large {
+    inset: 0 28px 52px 0;
+  }
+
+  .image-placeholder.small {
+    width: 58%;
+    min-height: 150px;
+  }
+
+  .intro,
+  .cards-section,
+  .why,
+  .story-band,
+  .cta-panel,
+  .form-wrap,
+  .details-grid,
+  .content-page {
+    padding: 42px 0;
+  }
+
+  .card,
+  .detail-card,
+  .note-card,
+  .form-card,
+  .cta-panel {
+    padding: 22px;
   }
 }
