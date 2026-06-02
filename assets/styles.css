@@ -23,6 +23,25 @@ body {
   line-height: 1.6;
 }
 
+.holding-page {
+  min-height: 100vh;
+  background: #f7f4ee;
+}
+
+.holding {
+  width: min(1120px, calc(100% - 40px));
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+.holding h1 {
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  font-weight: 850;
+  letter-spacing: 0;
+}
+
 a {
   color: inherit;
 }
