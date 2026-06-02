@@ -5,10 +5,13 @@ Static starter website for Out At.
 ## Pages
 
 - `/` Homepage
-- `/join.html` Join page
+- `/join/` Join page
+- `/join.html` Legacy join URL
+- `/poppet/` Hidden/test site experience
 - `/trips/sitges-2026.html` Sitges trip page
 - `/trips/london-social.html` London social page
 - `/privacy.html` Privacy notice
+- `/404.html` Custom 404 page
 
 ## Deploy
 
@@ -21,8 +24,25 @@ Recommended:
 5. Set output directory to `/`.
 6. Add custom domain: `outat.co.uk`.
 
+## Join form setup
+
+The custom join form posts to a Cloudflare Pages Function at `/api/join`.
+
+Create a Cloudflare Pages environment variable called:
+
+```text
+JOIN_FORM_ENDPOINT
+```
+
+Paste your Google Apps Script Web App endpoint URL as the value. It should look like:
+
+```text
+https://script.google.com/macros/s/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/exec
+```
+
+The form sends the submitted fields to that endpoint and shows an on-page confirmation when the request succeeds. It does not redirect people away from `/join/`.
+
 ## To do
 
-- Replace Google Form placeholder on `join.html`.
 - Add final logo asset if required.
 - Update trip dates and details.
