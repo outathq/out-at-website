@@ -1,5 +1,6 @@
 :root {
   --ink: #19211f;
+  --navy: #101f33;
   --muted: #5d6a66;
   --soft: #f8f5ef;
   --card: #ffffff;
@@ -40,6 +41,181 @@ body {
   font-size: clamp(2.4rem, 8vw, 5rem);
   font-weight: 850;
   letter-spacing: 0;
+}
+
+.join-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(16, 31, 51, 0.06), transparent 34%),
+    var(--soft);
+}
+
+.join-shell {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.public-wordmark {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--navy);
+  text-decoration: none;
+  font-size: 1.12rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.branded-join {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(360px, 1.05fr);
+  gap: clamp(32px, 7vw, 86px);
+  align-items: start;
+  padding: 72px 0 90px;
+}
+
+.branded-join-intro {
+  position: sticky;
+  top: 32px;
+  padding-top: 18px;
+}
+
+.branded-join-intro h1 {
+  color: var(--navy);
+}
+
+.branded-join-intro p {
+  max-width: 710px;
+  color: var(--muted);
+  font-size: clamp(1.12rem, 2vw, 1.32rem);
+}
+
+.join-card {
+  position: relative;
+  padding: 1px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(16, 31, 51, 0.26), rgba(242, 199, 102, 0.55), rgba(58, 128, 151, 0.34));
+  box-shadow: 0 26px 70px rgba(16, 31, 51, 0.12);
+}
+
+.branded-join-form {
+  padding: 28px;
+  background: var(--card);
+  border-radius: 8px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.branded-join-form label,
+.branded-join-form fieldset {
+  display: grid;
+  gap: 8px;
+}
+
+.branded-join-form span,
+.branded-join-form legend {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.branded-join-form em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: 650;
+}
+
+.branded-join-form input,
+.branded-join-form textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(16, 31, 51, 0.13);
+  border-radius: 8px;
+  padding: 11px 12px;
+  background: #fbfaf7;
+  color: var(--ink);
+  font: inherit;
+}
+
+.branded-join-form input:focus,
+.branded-join-form textarea:focus {
+  border-color: var(--accent);
+  outline: 3px solid rgba(15, 107, 97, 0.13);
+}
+
+.branded-join-form textarea {
+  resize: vertical;
+}
+
+.branded-join-form fieldset {
+  margin: 22px 0 0;
+  padding: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.branded-join-form fieldset label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.branded-join-form input[type="checkbox"] {
+  width: 18px;
+  min-height: 18px;
+  accent-color: var(--accent);
+}
+
+.full-field {
+  margin-top: 22px;
+}
+
+.consent-check {
+  margin-top: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.consent-check input {
+  width: 18px;
+  min-height: 18px;
+  margin-top: 3px;
+  accent-color: var(--accent);
+}
+
+.consent-check span {
+  font-size: 1rem;
+}
+
+.form-status {
+  min-height: 1.6em;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.form-status[data-state="success"] {
+  color: var(--accent);
+}
+
+.form-status[data-state="error"] {
+  color: #a14435;
+}
+
+.join-form button:disabled {
+  cursor: wait;
+  opacity: 0.72;
 }
 
 .error-page {
@@ -518,6 +694,29 @@ footer p {
 
   h1 {
     font-size: clamp(2.8rem, 14vw, 4.6rem);
+  }
+
+  .branded-join,
+  .form-grid,
+  .branded-join-form fieldset {
+    grid-template-columns: 1fr;
+  }
+
+  .branded-join {
+    gap: 28px;
+    padding: 48px 0 72px;
+  }
+
+  .branded-join-intro {
+    position: static;
+  }
+
+  .branded-join-form {
+    padding: 22px;
+  }
+
+  .join-card {
+    border-radius: 8px;
   }
 
   .hero-actions,
