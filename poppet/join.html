@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Join Out At</title>
-  <meta name="description" content="Join the Out At list for London socials, Sitges weekend plans and future trips.">
+  <meta name="description" content="Request to join Out At for friendly LGBTQ+ socials, weekends and trips.">
   <link rel="canonical" href="/poppet/join.html">
   <link rel="stylesheet" href="../assets/styles.css">
   <link rel="stylesheet" href="../assets/mvp.css">
@@ -27,56 +27,85 @@
   <main class="mvp-main">
     <section class="mvp-join-layout">
       <div class="mvp-join-copy">
-        <p class="eyebrow">Join Out At</p>
-        <h1>Come along<br>when it feels right.</h1>
+        <h1>Join Out At</h1>
         <p>
-          Be first to hear about London socials, Sitges weekend plans and future Out At trips.
+          Friendly LGBTQ+ socials, weekends and trips — built around good people, easy connection and plans that don’t feel forced.
         </p>
-        <p>
-          No spam. No pressure. Just useful updates when something’s coming.
+        <p class="mvp-reassurance">
+          We manually review join requests to help keep the community friendly, genuine and spam-free.
         </p>
 
         <div class="mvp-next-card">
-          <h2>What happens next?</h2>
+          <h2>What happens after you request to join?</h2>
           <ol>
-            <li>You’ll get a short welcome email.</li>
-            <li>We’ll send occasional updates.</li>
-            <li>If something feels right, you can join. No pressure.</li>
+            <li>We’ll check your details with care.</li>
+            <li>You’ll get a short email with the next step.</li>
+            <li>If it feels right, you can join in. No pressure.</li>
           </ol>
         </div>
       </div>
 
       <section class="join-card mvp-form-card" aria-label="Out At join form">
         <form class="join-form branded-join-form" action="/api/join" method="post" data-join-form>
-          <h2>Join the list</h2>
+          <h2>Request to join</h2>
 
+          <h3 class="mvp-form-section">About you</h3>
           <div class="form-grid">
             <label>
-              <span>First name</span>
-              <input name="preferred_name" type="text" autocomplete="given-name" required>
+              <span>First name *</span>
+              <input name="first_name" type="text" autocomplete="given-name" required>
             </label>
 
             <label>
-              <span>Email address</span>
+              <span>Preferred name <em>optional</em></span>
+              <input name="preferred_name" type="text" autocomplete="nickname">
+            </label>
+
+            <label>
+              <span>Email address *</span>
               <input name="email" type="email" autocomplete="email" required>
+            </label>
+
+            <label>
+              <span>Instagram username <em>recommended</em></span>
+              <input name="instagram" type="text" autocomplete="off" placeholder="@yourhandle">
+              <small>This helps us keep the community genuine. Private accounts are fine.</small>
             </label>
           </div>
 
           <fieldset>
-            <legend>What sounds fun?</legend>
+            <legend>What sounds interesting?</legend>
             <label><input type="checkbox" name="interests" value="London socials"> London socials</label>
-            <label><input type="checkbox" name="interests" value="Sitges weekend"> Sitges weekend</label>
-            <label><input type="checkbox" name="interests" value="Future trips"> Future trips</label>
+            <label><input type="checkbox" name="interests" value="UK weekends"> UK weekends</label>
+            <label><input type="checkbox" name="interests" value="European trips"> European trips</label>
             <label><input type="checkbox" name="interests" value="Cruises"> Cruises</label>
+            <label><input type="checkbox" name="interests" value="Open to anything"> Open to anything</label>
           </fieldset>
 
-          <label class="consent-check">
-            <input name="consent" type="checkbox" value="yes" required>
-            <span>I’m happy for Out At to contact me about socials, weekends and trips.</span>
+          <fieldset class="mvp-single-fieldset">
+            <legend>Community</legend>
+            <label><input type="checkbox" name="whatsapp_community" value="yes"> I’d like to join the Out At WhatsApp community</label>
+          </fieldset>
+
+          <h3 class="mvp-form-section">Anything else?</h3>
+          <label class="full-field">
+            <span>What interests you most about Out At?</span>
+            <textarea name="notes" rows="5" placeholder="Tell us what caught your eye about Out At..."></textarea>
           </label>
 
-          <button class="button primary" type="submit">Join the list</button>
-          <p class="mvp-privacy-note">No spam. Unsubscribe anytime.</p>
+          <h3 class="mvp-form-section">Keep me in the loop</h3>
+          <label class="consent-check">
+            <input name="updates_opt_in" type="checkbox" value="yes">
+            <span>I’d like to hear about upcoming socials, trips and community updates from Out At.</span>
+          </label>
+
+          <h3 class="mvp-form-section">Privacy</h3>
+          <label class="consent-check">
+            <input name="privacy_agreement" type="checkbox" value="yes" required>
+            <span>I agree to the <a href="/poppet/privacy.html">Out At Privacy Policy</a> and understand my information will be used to manage my join request and communications.</span>
+          </label>
+
+          <button class="button primary" type="submit">Request to join</button>
           <p class="form-status" data-form-status role="status" aria-live="polite"></p>
         </form>
       </section>

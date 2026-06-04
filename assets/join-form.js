@@ -31,7 +31,7 @@
       }
 
       form.reset();
-      setStatus("Thanks. You’re on the list. We’ll be in touch when there’s something genuinely worth sharing.", "success");
+      setStatus("You’re in the right place 🎉\n\nThanks for requesting to join Out At.\n\nWe’ll review your details and send you an email shortly with the next step.\n\nNo spam. No pressure. Just good people and good plans.", "success");
     } catch (error) {
       setStatus("Something didn’t send. Please try again, or email hello@outat.co.uk.", "error");
     } finally {

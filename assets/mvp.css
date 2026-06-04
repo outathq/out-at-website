@@ -233,6 +233,11 @@
   padding: 26px;
 }
 
+.mvp-reassurance {
+  padding-left: 16px;
+  border-left: 3px solid rgba(197, 95, 75, 0.42);
+}
+
 .mvp-next-card h2,
 .mvp-form-card h2 {
   font-size: 1.35rem;
@@ -255,6 +260,32 @@
 
 .mvp-form-card .branded-join-form h2 {
   margin-bottom: 22px;
+}
+
+.mvp-form-section {
+  margin: 22px 0 14px;
+  font-size: 0.98rem;
+  letter-spacing: 0;
+}
+
+.branded-join-form small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.mvp-single-fieldset {
+  grid-template-columns: 1fr;
+}
+
+.consent-check a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+.mvp-form-card .form-status {
+  white-space: pre-line;
 }
 
 .mvp-privacy-note {
