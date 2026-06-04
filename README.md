@@ -7,11 +7,11 @@ Static starter website for Out At.
 - `/` Placeholder homepage
 - `/404.html` Custom 404 page
 
-The public site is temporarily locked down. Guessed join, trip, privacy and `/poppet` URLs redirect back to `/` so the live domain only shows the simple placeholder.
+The public site is temporarily locked down. Guessed join, trip and privacy URLs redirect back to `/` so the live domain only shows the simple placeholder unless someone has a direct `/poppet/...` test URL.
 
 ## Test Pages
 
-The fuller site and join form files remain in the repository for later testing, but Cloudflare redirects currently prevent them from being publicly browsed.
+The fuller site and join form files remain available under `/poppet/...` for direct testing.
 
 - `/poppet/` Test site experience
 - `/poppet/join.html` Test join form
@@ -46,7 +46,7 @@ Paste your Google Apps Script Web App endpoint URL as the value. It should look 
 https://script.google.com/macros/s/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/exec
 ```
 
-The form sends the submitted fields to that endpoint and shows an on-page confirmation when the request succeeds. For now, the working form lives in the repository at `/poppet/join.html`, but public access is redirected to `/` until the site is ready.
+The form sends the submitted fields to that endpoint and shows an on-page confirmation when the request succeeds. For now, the working form lives at `/poppet/join.html`, while public `/join` URLs redirect to `/` until the site is ready.
 
 ## To do
 
