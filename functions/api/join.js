@@ -10,7 +10,7 @@ export async function onRequestPost({ request, env }) {
 
   const formData = await request.formData();
   formData.append("submitted_at", new Date().toISOString());
-  formData.append("source", "outat.co.uk/join");
+  formData.append("source", "outat.co.uk/poppet/join");
 
   const response = await fetch(endpoint, {
     method: "POST",
