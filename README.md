@@ -13,11 +13,8 @@ The public site is temporarily locked down. Guessed join, trip and privacy URLs 
 
 The fuller site and join form files remain available under `/poppet/...` for direct testing.
 
-- `/poppet/` Test site experience
-- `/poppet/join.html` Test join form
-- `/poppet/trips/sitges-2026.html` Test Sitges trip page
-- `/poppet/trips/london-social.html` Test London social page
-- `/poppet/privacy.html` Test privacy notice
+- `/poppet/` Two-page MVP homepage
+- `/poppet/join.html` Two-page MVP join form
 
 ## Deploy
 

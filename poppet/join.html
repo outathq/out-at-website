@@ -4,74 +4,102 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Join Out At</title>
-  <meta name="description" content="Join the Out At list for LGBTQ+ socials, weekends and trips.">
+  <meta name="description" content="Join the Out At list for London socials, Sitges weekend plans and future trips.">
   <link rel="canonical" href="/poppet/join.html">
   <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/mvp.css">
   <script src="../assets/join-form.js" defer></script>
 </head>
-<body class="join-page branded-join-page">
-  <header class="public-header join-shell">
-    <a class="public-wordmark out-at-wordmark" href="/poppet/">
+<body class="mvp-page">
+  <header class="mvp-header">
+    <a class="mvp-wordmark" href="/poppet/">
       <span>OUT AT</span>
       <span class="gradient-line"></span>
     </a>
+    <nav class="mvp-nav" aria-label="Primary navigation">
+      <a href="/poppet/#coming">What’s coming</a>
+      <a href="/poppet/#why">Why it exists</a>
+      <a href="/poppet/join.html">Join</a>
+    </nav>
   </header>
+  <div class="mvp-header-line" aria-hidden="true"></div>
 
-  <main class="join-shell branded-join">
-    <section class="join-intro branded-join-intro">
-      <p class="eyebrow">Join the list</p>
-      <h1>Come along when it feels right.</h1>
-      <p>
-        We’ll send calm, useful updates about upcoming London socials, friendly weekends and future Out At trips. No hard sell, no pressure.
-      </p>
+  <main class="mvp-main">
+    <section class="mvp-join-layout">
+      <div class="mvp-join-copy">
+        <p class="eyebrow">Join Out At</p>
+        <h1>Come along<br>when it feels right.</h1>
+        <p>
+          Be first to hear about London socials, Sitges weekend plans and future Out At trips.
+        </p>
+        <p>
+          No spam. No pressure. Just useful updates when something’s coming.
+        </p>
+
+        <div class="mvp-next-card">
+          <h2>What happens next?</h2>
+          <ol>
+            <li>You’ll get a short welcome email.</li>
+            <li>We’ll send occasional updates.</li>
+            <li>If something feels right, you can join. No pressure.</li>
+          </ol>
+        </div>
+      </div>
+
+      <section class="join-card mvp-form-card" aria-label="Out At join form">
+        <form class="join-form branded-join-form" action="/api/join" method="post" data-join-form>
+          <h2>Join the list</h2>
+
+          <div class="form-grid">
+            <label>
+              <span>First name</span>
+              <input name="preferred_name" type="text" autocomplete="given-name" required>
+            </label>
+
+            <label>
+              <span>Email address</span>
+              <input name="email" type="email" autocomplete="email" required>
+            </label>
+          </div>
+
+          <fieldset>
+            <legend>What sounds fun?</legend>
+            <label><input type="checkbox" name="interests" value="London socials"> London socials</label>
+            <label><input type="checkbox" name="interests" value="Sitges weekend"> Sitges weekend</label>
+            <label><input type="checkbox" name="interests" value="Future trips"> Future trips</label>
+            <label><input type="checkbox" name="interests" value="Cruises"> Cruises</label>
+          </fieldset>
+
+          <label class="consent-check">
+            <input name="consent" type="checkbox" value="yes" required>
+            <span>I’m happy for Out At to contact me about socials, weekends and trips.</span>
+          </label>
+
+          <button class="button primary" type="submit">Join the list</button>
+          <p class="mvp-privacy-note">No spam. Unsubscribe anytime.</p>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+      </section>
     </section>
 
-    <section class="join-card" aria-label="Out At join form">
-      <form class="join-form branded-join-form" action="/api/join" method="post" data-join-form>
-        <div class="form-grid">
-          <label>
-            <span>Preferred name</span>
-            <input name="preferred_name" type="text" autocomplete="given-name" required>
-          </label>
-
-          <label>
-            <span>Email address</span>
-            <input name="email" type="email" autocomplete="email" required>
-          </label>
-
-          <label>
-            <span>Pronouns <em>optional</em></span>
-            <input name="pronouns" type="text" autocomplete="off">
-          </label>
-
-          <label>
-            <span>Location <em>optional</em></span>
-            <input name="location" type="text" autocomplete="address-level2">
-          </label>
+    <section class="mvp-host">
+      <div>
+        <p class="eyebrow">Meet your host</p>
+        <h2>Hi, I’m Tom.</h2>
+      </div>
+      <div>
+        <p>
+          I’ve spent years organising trips for friends, planning adventures and helping people feel included.
+        </p>
+        <p>
+          Out At is starting small — London socials first, then a first weekend away — and growing from there.
+        </p>
+        <div class="mvp-chip-row">
+          <span>Based between London and Brighton</span>
+          <span>Social travel, not forced fun</span>
+          <span>Starting small</span>
         </div>
-
-        <fieldset>
-          <legend>What are you interested in?</legend>
-          <label><input type="checkbox" name="interests" value="London socials"> London socials</label>
-          <label><input type="checkbox" name="interests" value="Sitges weekend"> Sitges weekend</label>
-          <label><input type="checkbox" name="interests" value="Future cruises"> Future cruises</label>
-          <label><input type="checkbox" name="interests" value="Other trips"> Other trips</label>
-        </fieldset>
-
-        <label class="full-field">
-          <span>Anything we should know? <em>optional</em></span>
-          <textarea name="notes" rows="5"></textarea>
-        </label>
-
-        <label class="consent-check">
-          <input name="consent" type="checkbox" value="yes" required>
-          <span>I’m happy for Out At to contact me about socials, weekends and trips.</span>
-        </label>
-
-        <button class="button primary" type="submit">Join the list</button>
-
-        <p class="form-status" data-form-status role="status" aria-live="polite"></p>
-      </form>
+      </div>
     </section>
   </main>
 </body>
