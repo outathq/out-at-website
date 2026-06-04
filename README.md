@@ -4,15 +4,20 @@ Static starter website for Out At.
 
 ## Pages
 
-- `/` Homepage
-- `/poppet/` Hidden/test site experience
-- `/poppet/join.html` Hidden/test join form
-- `/poppet/trips/sitges-2026.html` Hidden/test Sitges trip page
-- `/poppet/trips/london-social.html` Hidden/test London social page
-- `/poppet/privacy.html` Hidden/test privacy notice
+- `/` Placeholder homepage
 - `/404.html` Custom 404 page
 
-Root-level join, trip and privacy URLs redirect to their `/poppet` equivalents while the test site is hidden.
+The public site is temporarily locked down. Guessed join, trip, privacy and `/poppet` URLs redirect back to `/` so the live domain only shows the simple placeholder.
+
+## Test Pages
+
+The fuller site and join form files remain in the repository for later testing, but Cloudflare redirects currently prevent them from being publicly browsed.
+
+- `/poppet/` Test site experience
+- `/poppet/join.html` Test join form
+- `/poppet/trips/sitges-2026.html` Test Sitges trip page
+- `/poppet/trips/london-social.html` Test London social page
+- `/poppet/privacy.html` Test privacy notice
 
 ## Deploy
 
@@ -41,7 +46,7 @@ Paste your Google Apps Script Web App endpoint URL as the value. It should look 
 https://script.google.com/macros/s/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/exec
 ```
 
-The form sends the submitted fields to that endpoint and shows an on-page confirmation when the request succeeds. For now, the working form lives at `/poppet/join.html`.
+The form sends the submitted fields to that endpoint and shows an on-page confirmation when the request succeeds. For now, the working form lives in the repository at `/poppet/join.html`, but public access is redirected to `/` until the site is ready.
 
 ## To do
 
