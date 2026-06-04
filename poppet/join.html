@@ -3,64 +3,76 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Join Out At | LGBTQ+ socials and trips</title>
-  <meta name="description" content="Join the Out At list for friendly UK LGBTQ+ socials, weekends away and future group cruises.">
+  <title>Join Out At</title>
+  <meta name="description" content="Join the Out At list for LGBTQ+ socials, weekends and trips.">
+  <link rel="canonical" href="/poppet/join.html">
   <link rel="stylesheet" href="../assets/styles.css">
+  <script src="../assets/join-form.js" defer></script>
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="/poppet/">
-      <span class="brand-mark">OUT AT</span>
+<body class="join-page branded-join-page">
+  <header class="public-header join-shell">
+    <a class="public-wordmark out-at-wordmark" href="/poppet/">
+      <span>OUT AT</span>
       <span class="gradient-line"></span>
     </a>
-    <nav>
-      <a href="/poppet/#socials">Socials</a>
-      <a href="/poppet/trips/sitges-2026.html">Sitges</a>
-      <a href="/poppet/#cruises">Cruises</a>
-      <a class="nav-cta" href="/poppet/join.html">Join</a>
-    </nav>
   </header>
 
-  <main>
-    <section class="page-hero">
+  <main class="join-shell branded-join">
+    <section class="join-intro branded-join-intro">
       <p class="eyebrow">Join the list</p>
-      <h1>Be part of the first Out At circle.</h1>
+      <h1>Come along when it feels right.</h1>
       <p>
-        Tell us what you are interested in and we will keep you posted on relaxed socials, friendly weekends away and future Out At Sea plans.
+        We’ll send calm, useful updates about upcoming London socials, friendly weekends and future Out At trips. No hard sell, no pressure.
       </p>
     </section>
 
-    <section class="form-wrap">
-      <div class="form-card">
-        <h2>Join form</h2>
-        <p class="muted">
-          Replace this placeholder with your Google Form embed code.
-        </p>
+    <section class="join-card" aria-label="Out At join form">
+      <form class="join-form branded-join-form" action="/api/join" method="post" data-join-form>
+        <div class="form-grid">
+          <label>
+            <span>Preferred name</span>
+            <input name="preferred_name" type="text" autocomplete="given-name" required>
+          </label>
 
-        <div class="form-placeholder">
-          <p><strong>Google Form embed goes here</strong></p>
-          <p>Google Forms → Send → Embed → copy iframe → paste here.</p>
+          <label>
+            <span>Email address</span>
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+
+          <label>
+            <span>Pronouns <em>optional</em></span>
+            <input name="pronouns" type="text" autocomplete="off">
+          </label>
+
+          <label>
+            <span>Location <em>optional</em></span>
+            <input name="location" type="text" autocomplete="address-level2">
+          </label>
         </div>
-      </div>
 
-      <aside class="note-card">
-        <h2>A quick note</h2>
-        <p>
-          Out At is starting small so the first experiences can feel personal, calm and easy to join.
-        </p>
-        <p>
-          Some chats may use WhatsApp groups or communities. If you join one, your phone number may be visible to other members.
-        </p>
-        <p>
-          We’ll only use your details to contact you about Out At experiences, socials and trips.
-        </p>
-      </aside>
+        <fieldset>
+          <legend>What are you interested in?</legend>
+          <label><input type="checkbox" name="interests" value="London socials"> London socials</label>
+          <label><input type="checkbox" name="interests" value="Sitges weekend"> Sitges weekend</label>
+          <label><input type="checkbox" name="interests" value="Future cruises"> Future cruises</label>
+          <label><input type="checkbox" name="interests" value="Other trips"> Other trips</label>
+        </fieldset>
+
+        <label class="full-field">
+          <span>Anything we should know? <em>optional</em></span>
+          <textarea name="notes" rows="5"></textarea>
+        </label>
+
+        <label class="consent-check">
+          <input name="consent" type="checkbox" value="yes" required>
+          <span>I’m happy for Out At to contact me about socials, weekends and trips.</span>
+        </label>
+
+        <button class="button primary" type="submit">Join the list</button>
+
+        <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+      </form>
     </section>
   </main>
-
-  <footer>
-    <p>© Out At. Experiences, together.</p>
-    <p><a href="mailto:hello@outat.co.uk">hello@outat.co.uk</a> · <a href="/poppet/privacy.html">Privacy</a></p>
-  </footer>
 </body>
 </html>
